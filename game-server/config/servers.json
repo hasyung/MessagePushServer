@@ -1,0 +1,24 @@
+{
+  "development":{
+    "connector": [
+      {"id": "connector-server-1", "host": "127.0.0.1", "port": 9928, "clientPort": 9927, "frontend": true}
+    ],
+    "message": [
+      {"id":"message-server-1", "host":"127.0.0.1", "port":9929}
+    ],
+    "geo": [
+      {"id":"geo-server-1", "host":"127.0.0.1", "port":9930}
+    ]
+  },
+  "production":{
+    "connector": [
+      {"id": "connector-server-1", "host": "127.0.0.1", "port": 9928, "clientPort": 9927, "frontend": true}
+    ],
+    "message": [
+      {"id":"message-server-1", "host":"127.0.0.1", "port":9929}
+    ],
+    "geo": [
+      {"id":"geo-server-1", "host":"127.0.0.1", "port":9930}
+    ]
+  }
+}

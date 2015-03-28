@@ -1,0 +1,22 @@
+[
+  {
+    "id": "user-1",
+    "username": "admin",
+    "password": "admin_asdfg110",
+    "level": 1
+  },
+
+  {
+    "id": "user-2",
+    "username": "monitor",
+    "password": "monitor_asdfg110",
+    "level": 2
+  },
+
+  {
+    "id": "user-3",
+    "username": "test",
+    "password": "test_asdfgh110",
+    "level": 2
+  }
+]
