@@ -40,10 +40,10 @@ app.configure('production|development', 'geo', function () {
   var rule = new schedule.RecurrenceRule();
   rule.second = 30;
 
-  var globalCrontabJob = schedule.scheduleJob(rule, function() {
-      console.log("--Timeout Items Size: ", Object.keys(app.globalTimeoutHash).length);
-      console.log("--Timeout Items: ", Object.keys(app.globalTimeoutHash));
-  });
+  //var globalCrontabJob = schedule.scheduleJob(rule, function() {
+      //console.log("--Timeout Items Size: ", Object.keys(app.globalTimeoutHash).length);
+      //console.log("--Timeout Items: ", Object.keys(app.globalTimeoutHash));
+  //});
 
   app.set("globalCrontabJob", globalCrontabJob, true);
 });

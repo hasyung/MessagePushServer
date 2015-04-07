@@ -1,5 +1,5 @@
 var pomelo = window.pomelo;
-var host = "192.168.5.47";
+var host = "127.0.0.1";
 var port = "9927";
 
 util = {
