@@ -45,7 +45,7 @@ app.configure('production|development', 'geo', function () {
       //console.log("--Timeout Items: ", Object.keys(app.globalTimeoutHash));
   //});
 
-  app.set("globalCrontabJob", globalCrontabJob, true);
+  //app.set("globalCrontabJob", globalCrontabJob, true);
 });
 
 // start app
