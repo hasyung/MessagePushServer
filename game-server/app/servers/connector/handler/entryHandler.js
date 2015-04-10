@@ -16,13 +16,13 @@ handler.enter = function (msg, session, next) {
   var uid = msg.username + '*' + rid;
 
   if (!msg.username || msg.username.length == 0) {
-    throw new Error("username is required");
+    throw new Error("username_required");
   }
 
   var sessionService = self.app.get('sessionService');
 
   if (!!sessionService.getByUid(uid)) {
-    next(null, {code: 'failed', message: "duplicate login error"});
+    next(null, {code: 'failed', message: "duplicate_login"});
     return;
   }
 

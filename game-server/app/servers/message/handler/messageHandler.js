@@ -14,9 +14,11 @@ Handler.prototype.send = function (msg, session, next) {
   var channelService = this.app.get('channelService');
 
   var param = {
-    content: msg.content,
-    username: username,
-    target: msg.target
+    package: msg.package, // 应用报名
+    message_key: msg.message_key, // 消息标识
+    username: username, // 消息发送者
+    target: msg.target, // 目标接收者
+    content: msg.content, // 消息体
   };
 
   channel = channelService.getChannel(rid, false);
@@ -40,7 +42,7 @@ Handler.prototype.send = function (msg, session, next) {
         }
       ]);
     } else {
-      console.error("cannot find member named", tuid);
+      console.error("cannot find member named ", tuid);
     }
   }
 
