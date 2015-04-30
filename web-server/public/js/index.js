@@ -57,9 +57,10 @@ function enter() {
 
 function send() {
   var params = {
+    package: 'com.cdavatar.sichuan_airline_hrms',
     content: {agree: "yes", body: $("#content").val()},
     username: $("#username").val(),
-    target: $("#to").val(),
+    target: $("#to").val()
   };
 
   pomelo.request("message.messageHandler.send", params, function(data) {
