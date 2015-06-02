@@ -59,6 +59,7 @@ function enter() {
 function send() {
   var params = {
     package: 'com.cdavatar.sichuan_airline_hrms',
+    message_key: 'user_message',
     content: {agree: "yes", body: $("#content").val()},
     username: $("#username").val(),
     target: $("#to").val()
