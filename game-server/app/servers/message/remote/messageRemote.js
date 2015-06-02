@@ -13,6 +13,16 @@ MessageRemote.prototype.add = function (uid, sid, name, flag, callback) {
 
   if (!!channel) {
     channel.add(uid, sid);
+
+    var param = {
+      //package: msg.package, // 应用报名
+      message_key: 'system', // 消息标识
+      username: uid.split("*")[0], // 消息发送者
+      target: "*", // 目标接收者
+      content: {}, // 消息体
+    };
+
+    channel.pushMessage('Enter', param);
   }
 
   callback(this.get_room_names(name, flag));

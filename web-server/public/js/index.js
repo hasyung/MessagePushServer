@@ -50,6 +50,7 @@ function enter() {
           add_log("#FF0000", "DUPLICATE_ERROR");
         } else {
           add_log("#00CC99", data.users.length + "个人");
+          add_log("#00CC99", data.users.join(","));
         }
     });
   });
@@ -132,8 +133,12 @@ $(document).ready(function(){
         add_log("#0000FF", "收到上报通知:  " + JSON.stringify(data, null, '\t'));
     });
 
+    pomelo.on('Enter', function(data){
+        add_log("#FF00CC", "收到进入事件:  " + data.username + " enter");
+    });
+
     pomelo.on('Leave', function(data){
-        add_log("#FF00CC", "收到发来消息:  " + data.username + " leave");
+        add_log("#FF00CC", "收到离开事件:  " + data.username + " leave");
     });
 
 });
