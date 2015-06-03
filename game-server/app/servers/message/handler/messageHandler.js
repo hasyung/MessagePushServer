@@ -44,6 +44,20 @@ Handler.prototype.send = function (msg, session, next) {
     } else {
       console.error("cannot find member named ", tuid);
     }
+
+    // 推送移动客户端
+    var array = ["ios", "android"];
+
+    array.forEach(function(item) {
+      var mobile_target = msg.target.replace("web_", item + "_");
+      var mobile_tuid = mobile_target + '*' + rid;
+      var mobile_member = channel.getMember(mobile_tuid);
+
+      if (!!mobile_member) {
+        param["target"] = mobile_target;
+        channelService.pushMessageByUids('Message', param, [{uid: mobile_tuid, sid: mobile_member['sid']}]);
+      }
+    });
   }
 
   next(null, {
