@@ -48,11 +48,12 @@ Handler.prototype.send = function (msg, session, next) {
     // 推送移动客户端
     var array = ["ios", "android"];
 
-    if (msg.target.indexOf("web_") > 0) {
+    if (msg.target.indexOf("web_") >= 0) {
       array.forEach(function(item) {
         var mobile_target = msg.target.replace("web_", item + "_");
         var mobile_tuid = mobile_target + '*' + rid;
         var mobile_member = channel.getMember(mobile_tuid);
+        console.log(mobile_member);
 
         if (!!mobile_member) {
           param["target"] = mobile_target;
