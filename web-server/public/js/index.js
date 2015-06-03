@@ -56,11 +56,33 @@ function enter() {
   });
 }
 
-function send() {
+function send_user_message() {
   var params = {
     package: 'com.cdavatar.sichuan_airline_hrms',
     message_key: 'user_message',
-    content: {total_count: 1, latest_message: {category: "normal", body: $("#content").val()}},
+    content: {unread_count: 1, latest_message: {title: "标题", body: $("#content").val()}},
+    username: $("#username").val(),
+    target: $("#to").val()
+  };
+
+  pomelo.request("message.messageHandler.send", params, function(data) {
+    if (data.code == 'failed') {
+      add_log("#FF0000", "SEND ERROR");
+    }
+  });
+}
+
+function send_workflow_message() {
+  var params = {
+    package: 'com.cdavatar.sichuan_airline_hrms',
+    message_key: 'workflow',
+    content: {
+      type: "Flow::AdjustPosition",
+      count: 3,
+      name: "调岗",
+      route_state: "",
+      oldest_at: new Date()
+    },
     username: $("#username").val(),
     target: $("#to").val()
   };
