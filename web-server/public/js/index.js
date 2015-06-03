@@ -60,7 +60,7 @@ function send() {
   var params = {
     package: 'com.cdavatar.sichuan_airline_hrms',
     message_key: 'user_message',
-    content: {agree: "yes", body: $("#content").val()},
+    content: {total_count: 1, latest_message: {category: "normal", body: $("#content").val()}},
     username: $("#username").val(),
     target: $("#to").val()
   };
